@@ -1,0 +1,59 @@
+#title {
+  color: white;
+  font-weight: bold;
+}
+#navbar {
+  background-color: #8338ec;
+}
+#nav-link {
+  color: #aaaaaa;
+}
+#nav-link:hover {
+  color: white;
+}
+#formC {
+  display: flex;
+}
+#fg {
+  flex: auto;
+  margin-left: 10px;
+  border: solid #6c757d48 2px;
+  padding: 10px;
+  border-radius: 25px;
+}
+.fgbtn {
+  align-self: center;
+}
+#btnc {
+  margin-top: 10px;
+  display: flex;
+}
+#btnc button {
+  flex: auto;
+}
+.inputS {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.controlarea {
+  display: flex;
+  flex-direction: column;
+}
+.f1 {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+@media only screen and (max-width: 600px) {
+  #formC {
+    display: flex;
+    flex-direction: column;
+  }
+  #fg {
+    flex: auto;
+    margin-top: 10px;
+    border: solid #6c757d48 2px;
+    padding: 10px;
+    border-radius: 25px;
+  }
+}

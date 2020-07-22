@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cpanel | Command Center</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light ">
+      <a id="title" class="navbar-brand" href="/">Send It</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a id="nav-link" class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-link" class="nav-link" href="/About">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="container">
+      <div class="logArea">
+        <label for="logs" class="h4">Logs</label>
+        <textarea class="form-control" id="logs" rows="5" readonly></textarea>
+        <button id="cbtn" type="button" class="btn btn-outline-danger m-1">
+          Clear The Log
+        </button>
+      </div>
+      <div class="commandarea">
+        <label class="h4">CMD</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Command</span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="dir.."
+            aria-label="Command"
+            aria-describedby="basic-addon1"
+            id="CMDInput"
+          />
+          <button id="cmdbtn" type="button" class="btn btn-outline-success">
+            Enter
+          </button>
+        </div>
+        <label>Command Output</label>
+        <textarea
+          class="form-control"
+          id="CMDlogs"
+          rows="5"
+          readonly
+        ></textarea>
+
+        <button id="ccmdbtn" type="button" class="btn btn-outline-danger m-1">
+          Clear Command Log
+        </button>
+      </div>
+
+      <div class="controlarea mb-5">
+        <label class="h4">Control Panel</label>
+        <div class="1rbtns f1">
+          <button
+            data-target="#CdModal"
+            data-toggle="modal"
+            id="ddfilebtn"
+            type="button"
+            class="btn btn-outline-danger m-1 "
+          >
+            Clear Downloaded Files List
+          </button>
+          <p class="text-danger ">
+            Deleting the list will cause files to overwrite
+          </p>
+        </div>
+        <div class="1rbtns f1">
+          <a
+            href="/fs"
+            class="btn btn-outline-secondary m-1"
+            role="button"
+            aria-pressed="true"
+            >File System</a
+          >
+        </div>
+        <label class="h5 text-danger">Danger Zone</label>
+        <div class="1rbtns f1">
+          <button
+            data-toggle="modal"
+            data-target="#stopModal"
+            id="mstpbtn"
+            type="button"
+            class="btn btn-danger m-1 "
+          >
+            Stop
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Modals -->
+    <!-- stop model -->
+    <div
+      class="modal fade"
+      id="stopModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="stopModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stopModalLabel">Warning</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger h6">
+              Are You Sure you want to stop the server?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="stpbtn" type="button" class="btn btn-danger">
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Clear Done List -->
+    <div
+      class="modal fade"
+      id="CdModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="CdModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="CdModalLabel">Warning</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger h6">
+              Are You Sure you want to Delet the Done List?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              id="clearDLbtn"
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="socket.js"></script>
+  </body>
+</html>

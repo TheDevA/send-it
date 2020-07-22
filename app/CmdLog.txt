@@ -1,0 +1,23 @@
+
+$17:7:22$ |Output| 
+ Le volume dans le lecteur C n'a pas de nom.
+ Le numro de srie du volume est FC7B-F0EA
+
+ Rpertoire de c:\Users\user\Desktop\DONTOPEN\web\node\send it
+
+2020-07-21  17:27    <REP>          .
+2020-07-21  17:27    <REP>          ..
+2020-07-22  16:05    <REP>          .vscode
+2020-07-22  17:00    <REP>          app
+2020-07-22  16:34             8,587 index.js
+2020-07-21  16:39    <REP>          node_modules
+2020-07-21  16:39            77,579 package-lock.json
+2020-07-21  16:39               495 package.json
+2020-07-21  15:17    <REP>          res
+               3 fichier(s)           86,661 octets
+               6 Rp(s)  19,661,864,960 octets libres
+
+|Error| 
+null
+|Extra| 
+

@@ -1,0 +1,4 @@
+**Download The latest virsion of ffmpeg Windows Build:https : //ffmpeg.zeranoe.com/builds/ and extract the file here**
+**Download The latest virsion of youtube-dl Windows Build : https://youtube-dl.org/ and extract the file here**
+
+**Have Fun 3>**

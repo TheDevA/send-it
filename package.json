@@ -1,0 +1,23 @@
+{
+  "name": "send-it",
+  "version": "1.0.0",
+  "description": "web app for send download music",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon"
+  },
+  "author": "Zero_Day",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^4.0.2",
+    "express": "^4.17.1",
+    "node-cmd": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "socket.io": "^2.3.0",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
