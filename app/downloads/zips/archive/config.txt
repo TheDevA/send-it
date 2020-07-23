@@ -1,0 +1,19 @@
+**move this file to C:\Users\user\AppData\Roaming\youtube-dl**
+--max-filesize 200m
+
+-f mp3/bestaudio
+
+--newline
+
+-x
+
+--audio-format mp3
+
+
+-o "path/to/app/downloads/%(title)s-%(id)s.%(ext)s"
+
+-w
+
+-c
+
+--download-archive "path/to/app/done.txt"
