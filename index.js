@@ -96,7 +96,7 @@ io.on("connection", socket => {
       fs.appendFileSync("app/U.txt", String(url).trim() + "\r\n", "UTF-8");
     }
     cmd.get(
-      "app\\youtube-dl -a app\\U.txt -f mp3/bestaudio",
+      "app/youtube-dl --newline -a app/U.txt -x -f mp3/bestaudio -o app/downloads/%(title)s-%(id)s.%(ext)s -w -c --download-archive app/done.txt",
       (err, data, stdt) => {
         fs.appendFileSync(
           "app/log.txt",
@@ -127,7 +127,7 @@ io.on("connection", socket => {
   socket.on("Purls", Purls => {
     let date = new Date();
     cmd.get(
-      `app\\youtube-dl -o "C:/Users/user/Desktop/DONTOPEN/web/node/send it/app/downloads/%(playlist_title)s/%(title)s-%(id)s.%(ext)s" ${String(
+      `app/youtube-dl --newline -a app/U.txt -x -f mp3/bestaudio -o app/downloads/%(playlist_title)s/%(title)s-%(id)s.%(ext)s -w -c --download-archive app/done.txt ${String(
         Purls
       )}`,
       (err, data, stdt) => {
