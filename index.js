@@ -96,7 +96,7 @@ io.on("connection", socket => {
       fs.appendFileSync("app/U.txt", String(url).trim() + "\r\n", "UTF-8");
     }
     cmd.get(
-      "app/youtube-dl --ffmpeg-location 'app/' --newline -a 'app/U.txt' -x -f mp3/bestaudio -o 'app/downloads/%(title)s-%(id)s.%(ext)s' --download-archive 'app/done.txt'",
+      "app/youtube-dl --ffmpeg-location 'app/' --newline -a 'app/U.txt' -f mp3/bestaudio -x --audio-format mp3 -o 'app/downloads/%(title)s-%(id)s.%(ext)s' --download-archive 'app/done.txt'",
       (err, data, stdt) => {
         fs.appendFileSync(
           "app/log.txt",
@@ -127,7 +127,7 @@ io.on("connection", socket => {
   socket.on("Purls", Purls => {
     let date = new Date();
     cmd.get(
-      `app/youtube-dl --ffmpeg-location 'app/' --newline -a 'app/U.txt' -x -f mp3/bestaudio -o 'app/downloads/%(playlist_title)s/%(title)s-%(id)s.%(ext)s' --download-archive 'app/done.txt' ${String(
+      `app/youtube-dl --ffmpeg-location 'app/' --newline -a 'app/U.txt' -f mp3/bestaudio -x --audio-format mp3 -o 'app/downloads/%(playlist_title)s/%(title)s-%(id)s.%(ext)s' --download-archive 'app/done.txt' ${String(
         Purls
       )}`,
       (err, data, stdt) => {
